@@ -6,7 +6,10 @@ function Header() {
   return (
     <div className="header">
       <div className="header__left">
-        <img src="" alt="" />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Ethernet.svg/1280px-Ethernet.svg.png"
+          alt=""
+        />
         <div className="header__search">
           <SearchIcon />
           <input type="text" />
