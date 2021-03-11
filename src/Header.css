@@ -11,15 +11,9 @@
 
 .header__left {
   display: flex;
-  flex-direction: column;
 }
 
-.header__left__left > h3 {
-  display: flex;
-  border: 1px solid black;
-}
-
-.header__left__left > img {
+.header__left > img {
   object-fit: contain;
   height: 50px;
   margin-right: 10px;
