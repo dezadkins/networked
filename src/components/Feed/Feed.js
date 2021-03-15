@@ -34,6 +34,7 @@ function Feed() {
       photoUrl: "",
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
+    setInput("");
   };
 
   return (
@@ -77,12 +78,6 @@ function Feed() {
           photoUrl={photoUrl}
         />
       ))}
-
-      <Post
-        name="Dez Adkins"
-        description="this is a test"
-        message="Nice work"
-      />
     </div>
   );
 }
