@@ -6,6 +6,7 @@ import PanoramaOutlinedIcon from "@material-ui/icons/PanoramaOutlined";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import PostAddOutlinedIcon from "@material-ui/icons/PostAddOutlined";
+import Post from "../Post/Post";
 
 function Feed() {
   return (
@@ -33,6 +34,12 @@ function Feed() {
           />
         </div>
       </div>
+      {/* Posts */}
+      <Post
+        name="Dez Adkins"
+        description="this is a test"
+        message="Nice work"
+      />
     </div>
   );
 }
