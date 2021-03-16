@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Feed.css";
+import { Avatar } from "@material-ui/core";
+
 import CreateIcon from "@material-ui/icons/Create";
 import InputOption from "../InputOption/InputOption";
 import PanoramaOutlinedIcon from "@material-ui/icons/PanoramaOutlined";
@@ -9,19 +11,22 @@ import PostAddOutlinedIcon from "@material-ui/icons/PostAddOutlined";
 import Post from "../Post/Post";
 import { db } from "../../firebase";
 import firebase from "firebase";
-function Feed() {
+
+function Feed({ photoUrl }) {
   const [input, setInput] = useState("");
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) =>
-      setPosts(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    );
+    db.collection("posts")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setPosts(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        )
+      );
   }, []);
 
   const sendPost = (e) => {
@@ -40,6 +45,7 @@ function Feed() {
   return (
     <div className="feed">
       <div className="feed__inputContainer">
+        {/* <Avatar photoUrl={photoUrl} /> */}
         <div className="feed__input">
           <CreateIcon />
           <form action="">
