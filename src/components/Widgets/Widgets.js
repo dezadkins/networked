@@ -23,7 +23,10 @@ function Widgets() {
         <h2>Networked News</h2>
         <InfoIcon />
       </div>
-      {newsArticle("This app is fresh off the press!", "Welcome")}
+      {newsArticle(
+        "Networked App is fresh off the press!",
+        "Welcome to my new Clone"
+      )}
       {newsArticle(
         "The Morning After: Dyson's new laser-equipped vacuum",
         "A clean freak's dream"
